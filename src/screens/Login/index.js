@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { ImageBackground } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
@@ -8,9 +9,11 @@ const Login = () => {
   const [email, setEmail] = useState();
   const [pass, setPass] = useState();
 
+  const navigation = useNavigation();
+
   return(
     <ImageBackground source={require('../../../assets/barber.jpeg')} style={{ flex: 1 }}>
-      <Container>
+      <Container behavior={Platform.OS == 'ios' ? 'padding' : 'height'}>
         <TextInput
           label="Email"
           style={{ marginTop: 50, width: '80%', backgroundColor: 'transparent', color: 'white' }}
@@ -30,7 +33,7 @@ const Login = () => {
           onChangeText={pass => setPass(pass)}
         />
 
-        <Button mode='outlined' style={{ marginTop: 30, borderColor: 'white', borderWidth: 1 }}>
+        <Button onPress={() => navigation.navigate('Home')} mode='outlined' style={{ marginTop: 30, borderColor: 'white', borderWidth: 1 }}>
           Entrar
         </Button>
       </Container>
