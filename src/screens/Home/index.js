@@ -1,17 +1,28 @@
 import React from 'react';
 
-import { Background, Contact, Container, PfPContainer } from './styles';
-import { Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Background, Contact, Container, H2, PfPContainer, TextArea, H3 } from './styles';
 
 const Home = () => {
+  const navigation = useNavigation();
+
   return(
-    <Container>
-      <Background colors={['#965C2790', '#26180B']}>
-        <Contact>
-          <PfPContainer />
-        </Contact>
-      </Background>
-    </Container>
+    <Background colors={['#965C2790', '#26180B']}>
+      <Container>
+        {
+          [0, 1, 2, 3, 4, 5].map(i => 
+            <Contact onPress={ () => navigation.navigate('Profile') }>
+              <PfPContainer />
+
+              <TextArea>
+                <H2>Fulano de Tal | Zeor</H2>
+                <H3>Aberto das 6h as 18h</H3>
+              </TextArea>
+            </Contact>
+          )
+        }
+      </Container>
+    </Background>
   );
 }
 
