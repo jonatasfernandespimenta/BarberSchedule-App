@@ -1,7 +1,9 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { ImageBackground } from 'react-native';
+import { ImageBackground, Text, View } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
+
+import Hr from "react-native-hr-component";
 
 import { Container } from './styles';
 
@@ -33,9 +35,16 @@ const Login = () => {
           onChangeText={pass => setPass(pass)}
         />
 
-        <Button onPress={() => navigation.navigate('Home')} mode='outlined' style={{ marginTop: 30, borderColor: 'white', borderWidth: 1 }}>
+        <Button onPress={() => navigation.navigate('Home')} mode='outlined' style={{ marginVertical: 30, borderColor: 'white', borderWidth: 1 }}>
           Entrar
         </Button>
+
+        <Hr lineColor="white" width={1} text="Não possui uma conta?" textStyles={{ color: "white" }} />
+
+        <Button onPress={() => navigation.navigate('Home')} mode='outlined' style={{ marginTop: 30, borderColor: 'white', borderWidth: 1 }}>
+          Criar uma conta
+        </Button>
+
       </Container>
     </ImageBackground>
   );
