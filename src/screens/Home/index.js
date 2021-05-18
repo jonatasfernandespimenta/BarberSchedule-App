@@ -11,7 +11,7 @@ const Home = () => {
       <Container>
         {
           [0, 1, 2, 3, 4, 5].map(i => 
-            <Contact onPress={ () => navigation.navigate('Profile') }>
+            <Contact onPress={ () => navigation.navigate('Map') }>
               <PfPContainer />
 
               <TextArea>

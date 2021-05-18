@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import AuthRoutes from '../screens/Login';
 import Home from '../screens/Home';
 import Profile from '../screens/Profile';
+import Map from '../screens/Map';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,7 @@ const Routes = () => {
       >
         <Stack.Screen name="Auth" component={AuthRoutes} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={Home} options={{ title: 'Home', headerLeft: ()=> null }} />
+        <Stack.Screen name="Map" component={Map} />
         <Stack.Screen name="Profile" component={Profile} options={{ title: 'Perfil' }} />
       </Stack.Navigator>
     </NavigationContainer>
