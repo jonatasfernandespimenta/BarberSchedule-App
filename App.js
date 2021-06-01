@@ -3,6 +3,8 @@ import React from 'react';
 import Routes from './src/routes';
 
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import * as Location from "expo-location";
+import { useEffect } from 'react/cjs/react.development';
 
 const theme = {
   ...DefaultTheme,
@@ -16,7 +18,16 @@ const theme = {
   },
 };
 
+
 export default function App() {
+  useEffect(async() => {
+    let { status } = await Location.requestPermissionsAsync();
+    if (status !== 'granted') {
+      console.log('Permission denied')
+      return;
+    }
+  }, [])
+
   return (
     <>
       <PaperProvider theme={theme}>
