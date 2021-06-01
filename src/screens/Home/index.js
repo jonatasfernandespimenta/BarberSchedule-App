@@ -3,6 +3,9 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Background, Contact, Container, H2, PfPContainer, TextArea, H3 } from './styles';
 
+import { Button } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 const Home = () => {
   const navigation = useNavigation();
 
@@ -11,7 +14,7 @@ const Home = () => {
       <Container>
         {
           [0, 1, 2, 3, 4, 5].map(i => 
-            <Contact onPress={ () => navigation.navigate('Map') }>
+            <Contact onPress={ () => navigation.navigate('Profile') }>
               <PfPContainer />
 
               <TextArea>
@@ -22,6 +25,10 @@ const Home = () => {
           )
         }
       </Container>
+      <Button onPress={ () => navigation.navigate('Map') } mode='outlined' style={{ marginBottom: 10, borderColor: 'white', borderWidth: 1 }}>
+        <Icon name="map-marker" color="white" size={18} />
+        Mapa
+      </Button>
     </Background>
   );
 }
