@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Dimensions, View } from 'react-native';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 // import { Container } from './styles';
 import Constants from 'expo-constants';
 
 import * as Location from "expo-location";
 
 const Map = () => {
-  const [location, setLocation] = useState({ 'cords': { 'latitude': 0, 'longitude': 0} });
+  const [location, setLocation] = useState(0);
 
   useEffect(() => {
     (async () => {
@@ -19,7 +19,8 @@ const Map = () => {
       }
 
       const loc = await Location.getCurrentPositionAsync({});
-      setLocation(loc);
+
+      setLocation({ 'latitude': loc.coords.latitude, 'longitude': loc.coords.longitude});
     })();
   }, []);
 
@@ -28,12 +29,22 @@ const Map = () => {
       <MapView 
         style={{ 'width': Dimensions.get('window').width, 'height': Dimensions.get('window').height }}
         initialRegion={{
-          latitude: location?.coords?.latitude,
-          longitude: location?.coords?.longitude,
+          latitude: location?.latitude,
+          longitude: location?.longitude,
           latitudeDelta: 0.011,
           longitudeDelta: 0.011,
         }}
-      />
+      >
+        {
+          !!location &&
+            <Marker
+              coordinate={{ latitude: location.latitude, longitude: location.longitude }}
+              title={'Voce está aqui'}
+            />
+        }
+      </MapView>
+
+   
     </View>
   );
 }
