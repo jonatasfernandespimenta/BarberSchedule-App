@@ -15,7 +15,7 @@ export const Background = styled(LinearGradient)`
   justify-content: center;
   align-items: center;
   padding: 20px;
-`
+`;
 
 export const PfPContainer = styled.View`
   height: 80px;
