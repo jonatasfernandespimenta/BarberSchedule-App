@@ -16,6 +16,7 @@ const Login = () => {
   return(
     <ImageBackground source={require('../../../assets/barber.jpeg')} style={{ flex: 1 }}>
       <Container behavior={Platform.OS == 'ios' ? 'padding' : 'height'}>
+        <Text style={{ color: 'white', fontSize: 40 }}>Agendi</Text>
         <TextInput
           label="Email"
           style={{ marginTop: 50, width: '80%', backgroundColor: 'transparent', color: 'white' }}

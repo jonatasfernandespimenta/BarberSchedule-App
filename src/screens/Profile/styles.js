@@ -1,12 +1,14 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
 
+import adjust from '../../utils/responsivity';
+
 export const Container = styled.View`
   background: #26180B;
   flex: 1;
-  width: 95%;
+  width: 100%;
   border-radius: 10px;
-  padding: 15px;
+  padding: 10px;
   align-items: center;
 `;
 
@@ -52,4 +54,35 @@ export const Categorie = styled.View`
   padding: 5px;
   border-radius: 5px;
   margin: 4px;
+`;
+
+export const WeekDay = styled.TouchableOpacity`
+  border-radius: 3px;
+  background: #B68300;
+  justify-content: center;
+  align-items: center;
+  height: ${adjust(40)}px;
+  width: ${adjust(40)}px;
+  margin: 4px;
+  margin-top: 10px;
+  padding: 2px;
+`;
+
+export const CalendarContainer = styled.View`
+  flex-direction: column;
+`;
+
+export const Schedule = styled.View`
+  border-radius: 10px;
+  background: #B68300;
+  padding: 10px;
+  height: 100px;
+  width: 80%;
+  margin-top: 30px;
+`;
+
+export const Hr = styled.View`
+  height: 1px;
+  background: #ffffff40;
+  width: 100%;
 `;
