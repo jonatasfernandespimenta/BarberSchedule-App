@@ -1,4 +1,5 @@
 import React from 'react';
+import { TextInput } from 'react-native-paper';
 
 import { useNavigation } from '@react-navigation/native';
 import { Background, Contact, Container, H2, PfPContainer, TextArea, H3 } from './styles';
@@ -11,6 +12,14 @@ const Home = () => {
 
   return(
     <Background colors={['#965C2790', '#26180B']}>
+      <TextInput
+        label="Busca"
+        style={{ marginTop: 10, width: '80%', backgroundColor: 'transparent', color: 'white' }}
+        underlineColor='white'
+        mode={'outlined'}
+        autoCapitalize={'none'}
+        right={<TextInput.Icon name="search" />}
+      />
       <Container>
         {
           [0, 1, 2, 3, 4, 5].map(i => 

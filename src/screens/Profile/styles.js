@@ -61,8 +61,8 @@ export const WeekDay = styled.TouchableOpacity`
   background: #B68300;
   justify-content: center;
   align-items: center;
-  height: ${adjust(40)}px;
-  width: ${adjust(40)}px;
+  height: ${adjust(35)}px;
+  width: ${adjust(35)}px;
   margin: 4px;
   margin-top: 10px;
   padding: 2px;

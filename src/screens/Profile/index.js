@@ -57,11 +57,12 @@ const Profile = () => {
         </View>
 
         <CalendarContainer>
-
-          <View style={{ flexDirection: 'row' }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
             <TouchableOpacity>
               <Icon name="chevron-left" color='white' size={25} />
             </TouchableOpacity>
+
+            <Text style={{ fontSize: 20 }}>Setembro</Text>
 
             <TouchableOpacity>
               <Icon name="chevron-right" color='white' size={25} />
@@ -69,6 +70,9 @@ const Profile = () => {
           </View>
 
           <Row>
+            <TouchableOpacity>
+              <Icon name="chevron-left" color='white' size={25} />
+            </TouchableOpacity>
             {
               weeks.map(week => (
                 <WeekDay>
@@ -77,6 +81,9 @@ const Profile = () => {
                 </WeekDay>
               ))
             }
+            <TouchableOpacity>
+              <Icon name="chevron-right" color='white' size={25} />
+            </TouchableOpacity>
 
             <Hr style={{ marginTop: 10 }} />
             {
